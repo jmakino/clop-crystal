@@ -63,3 +63,10 @@ Default value: if "none" is give, this option becomes a required one
 
 Variable name: the name of instance variable within class CLOP.
 
+## Limitation
+
+* Short option with value without whitespace (such as -n10) is not
+  supported.
+* No way to use same option multiple times (such as -s 1 -s 2 ...).
+  You can use string  as -s 1,2 and then decode it.
+  
