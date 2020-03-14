@@ -70,3 +70,7 @@ Variable name: the name of instance variable within class CLOP.
 * No way to use same option multiple times (such as -s 1 -s 2 ...).
   You can use string  as -s 1,2 and then decode it.
   
+## To do
+
+* give some human-readable error message for problems of option definition text
+  

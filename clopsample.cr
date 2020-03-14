@@ -75,3 +75,8 @@ clop_init(__LINE__, __FILE__, __DIR__, "optionstr")
                   
 options=CLOP.new(optionstr,ARGV)
 pp! options
+
+a= options.eps
+pp! a.class
+pp! a
+
