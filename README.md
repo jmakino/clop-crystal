@@ -1,8 +1,6 @@
 # clop-crystal
 
 A CLI genrator for Crystal
-A (still incomplete) interface to GR framework from Crystal
-
 
 ## Installation
 
