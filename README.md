@@ -43,7 +43,7 @@ types, type inference works for  assignments like the following,
 
     a= options.eps
 
-and a has the type Float64.
+and a has the type Float64 (determined at the compile time).
 
 ## Structure of the option description text
 
