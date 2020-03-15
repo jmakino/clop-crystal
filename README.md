@@ -21,6 +21,17 @@ Download clopsample.cr and
     crystal clopsample.cr  -- -h
 
 should show the auto-generated help message for clopsample.cr.
+
+If you use shards, I guess you can write
+
+    require "clop"
+
+instead of
+
+    require "./clop.cr"
+
+
+
 To use clop.cr, first define some string variable which contains
 the description in YAML-like (slightly enhanced) format. If the name
 of the valiable is "optionstr", add the following two lines:
