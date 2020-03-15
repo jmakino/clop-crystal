@@ -13,11 +13,9 @@ optionstr= <<-END
 
   Short name: -s
   Long name:		--softening_length
-  Value type:		float
   Default value: 	0.0
   Variable name: 	eps             
-  Description:		Softening lengt
-      Plummer softening, where rs2=r**2+eps**2 is used in place of r**2.
+  Description:		Softening length for Plummer softening, where rs2=r**2+eps**2 is used in place of r**2.
   Long description:                        
       This option sets the softening length used to calculate the force
       between two particles.  The calculation scheme comforms to standard
