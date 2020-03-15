@@ -4,7 +4,15 @@ A CLI genrator for Crystal
 
 ## Installation
 
+
+
 You need to place clop.cr in your Crystal's require search path.
+
+If you know how to use shard, add this to your application's shard.yml:
+
+    dependencies:
+      clop:
+        github: jmakino/clop-crystal
 
 ## Getting started
 
