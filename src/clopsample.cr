@@ -55,6 +55,15 @@ optionstr= <<-END
     If the vector has more components than the dimensionality of the N-body
     system, the extra components will be disgarded.
 
+  Short name:		-i
+  Long name:		--integer-vector
+  Value type:		int vector         
+  Default value:	3,-1,5,6,7
+  Variable name:	iv
+  Description:		Sample option to give an integer array
+  Long description:
+     Sample option to give an integer array. One can give multiple integer values
+     separated by commas (no whitespace).
   Short name:		-o
   Long name:		--output_file_name
   Value type:		string

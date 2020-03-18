@@ -75,7 +75,9 @@ class CLOPPARSER
         long = opt["Long name"]?
         value = opt["Default value"]?
         print "    @",opt["Variable name"]," = "
-        if vtype =~ /float vector/ 
+        if vtype =~ /int vector/ 
+          print "(CLOP.get_iv_val(\"#{value}\", \"#{vtype}\", \"#{short}\", \"#{long}\",argv))"
+        elsif vtype =~ /float vector/ 
           print "(CLOP.get_fv_val(\"#{value}\", \"#{vtype}\", \"#{short}\", \"#{long}\",argv))"
         elsif vtype =~ /float/ 
           print "(CLOP.get_float_val(\"#{value}\", \"#{vtype}\", \"#{short}\", \"#{long}\",argv))"
@@ -167,6 +169,9 @@ class CLOPPARSER
   end
   def self.get_fv_val(value, vtype, short, long, argv) : Array(Float64)
      self.getval(value, vtype, short, long, argv).split(",").map{|x| x.to_f}
+  end
+  def self.get_iv_val(value, vtype, short, long, argv) : Array(Int64)
+     self.getval(value, vtype, short, long, argv).split(",").map{|x| x.to_i64}
   end
   def self.get_bool_val(value, vtype, short, long, argv) : Bool
      self.getval(value, vtype, short, long, argv) == "true"
