@@ -1,6 +1,6 @@
 # clop-crystal
 
-A CLI genrator for Crystal
+A CLI generator for Crystal
 
 ## Installation
 
@@ -34,7 +34,7 @@ instead of
 
 To use clop.cr, first define some string variable which contains
 the description in YAML-like (slightly enhanced) format. If the name
-of the valiable is "optionstr", add the following two lines:
+of the variable is "optionstr", add the following two lines:
 
     clop_init(__LINE__, __FILE__, __DIR__, "optionstr")
     options=CLOP.new(optionstr,ARGV)
@@ -46,8 +46,9 @@ and initialized to contain the option parameters described in the text.
 
 should show
 
-    options # => #<CLOP:0x7f86626a9680
+    options # => #<CLOP:0x7facd305f680
      @eps=0.0,
+     @iv=[3, -1, 5, 6, 7],
      @n_particles=10,
      @output_file_name="",
      @vcom=[3.0, 4.0, 5.0],
@@ -55,7 +56,7 @@ should show
     a.class # => Float64
     a # => 0.0
 
-We can see that eps, n_particles, and other member varialbles have
+We can see that eps, n_particles, and other member variables have
 types specified in the option description text and have values either
 default or given in command line parameters. Since they have proper
 types, type inference works for  assignments like the following, 
@@ -74,7 +75,7 @@ A minimal example would be:
       (c) 2020, Jun Makino
 
       By running the file (typing "crystal clopsample.cr"), you can check whether
-      it still behaves correctly.  Maximum help is provided with --hellp
+      it still behaves correctly.  Maximum help is provided with --help
       ("crystal clopsample.cr -- --help").
  
 
@@ -83,24 +84,25 @@ A minimal example would be:
     Value type:		float
     Default value: 	0.0
     Variable name: 	eps             
-    Description:		Softening lengt
+    Description:		Softening length
         Plummer softening, where rs2=r**2+eps**2 is used in place of r**2.
     Long description:                        
         This option sets the softening length used to calculate the force
-        between two particles.  The calculation scheme comforms to standard
+        between two particles.  The calculation scheme conforms to standard
 
-The text should contain Description and Long Desctipion tags as the
-fitst two entries in usual YAML format. After that,  blocks
+The text should contain Description and Long description tags as the
+first two entries in usual YAML format. After that,  blocks
 with Short name, Long name ... can appear multiple times.
 
 Short name: short option. actually can be of whatever length.
 
 Long name: long option. actually can be of whatever length.
 
-Value type: At present, int, float, float vector (actuallt float
-            array), bool, and string are supprted and relognized
+Value type: At present, int, float, float vector (actually float
+            array), int, int vector, bool, and string are supported and recognized
 
-Default value: if "none" is give, this option becomes a required one
+Default value: the default value. If "none" is given as the default
+value, this option becomes a required one. 
 
 Variable name: the name of instance variable within class CLOP.
 
