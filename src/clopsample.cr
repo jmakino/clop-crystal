@@ -41,6 +41,14 @@ optionstr= <<-END
       acceleration (for all integrators)
       jerk (for the Hermite integrator)
 
+  Short name:		-X
+  Long name:  		--print_edited_optionstring
+  Value type:  		bool
+  Variable name:	print_edit
+  Description:		Print the option text after edit
+  Long description:
+    Print the iption text after edit. Some editing are done to add
+    each option unique name, and also add "|" for descriptions.
 
   Short name:		-v
   Long name:		--shift_velocity
@@ -64,16 +72,7 @@ optionstr= <<-END
   Long description:
      Sample option to give an integer array. One can give multiple integer values
      separated by commas (no whitespace).
-  Short name:		-o
-  Long name:		--output_file_name
-  Value type:		string
-  Variable name:	output_file_name
-  Print name:	 	         
-  Description:		Name of the outputfile
-  Long description:
-    Name of the snapshot output file.
-    The snapshot contains the mass, position, and velocity values
-    for all particles in an N-body system.
+
 END
 
 clop_init(__LINE__, __FILE__, __DIR__, "optionstr")
@@ -86,4 +85,8 @@ pp! options
 a= options.eps
 pp! a.class
 pp! a
+if options.print_edit
+  print "The option text after edit:\n"
+  print CLOPPARSER.add_option_tag(optionstr)
+end
 

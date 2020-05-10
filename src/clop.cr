@@ -35,6 +35,10 @@ class CLOPPARSER
         previous_line_was_newoption=true
       else
         previous_line_was_newoption=false
+        if x =~/(^\s+)(Description:)\s+(.*)/ || x =~/(^\s+)(Long description:)\s*(.*)/
+          x = $1+$2+"\n"+$1+"    "+"|"
+          x += "\n"+$1+"    "+$3 if $3.size > 0
+        end
       end
       ss += "  " if inoptions
       ss += x+"\n"
