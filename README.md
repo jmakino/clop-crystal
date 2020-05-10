@@ -112,8 +112,6 @@ Variable name: the name of instance variable within class CLOP.
   supported.
 * No way to use same option multiple times (such as -s 1 -s 2 ...).
   You can use string  as -s 1,2 and then decode it.
-* Descriptions should not contain the text like "A: B", since it is
-  interpret as YAML tag-data pair. "A:B" is okay.
 
 ## To do
 
