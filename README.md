@@ -69,26 +69,25 @@ and a has the type Float64 (determined at the compile time).
 
 A minimal example would be:
 
-    Description: Command line option parser sample code
-    Long description:
-      Test program for the class Clop (Command line option parser),
-      (c) 2020, Jun Makino
-
-      By running the file (typing "crystal clopsample.cr"), you can check whether
-      it still behaves correctly.  Maximum help is provided with --help
-      ("crystal clopsample.cr -- --help").
+  Description: Command line option parser sample code
+  Long description:
+    Test program for the class Clop (Command line option parser),
+    (c) 2020, Jun Makino
+     By running the file (typing "crystal clopsample.cr"), you can check whether
+    it still behaves correctly.  Maximum help is provided with --help
+    ("crystal clopsample.cr -- --help").
  
 
-    Short name: -s
-    Long name:		--softening_length
-    Value type:		float
-    Default value: 	0.0
-    Variable name: 	eps             
-    Description:		Softening length
-        Plummer softening, where rs2=r**2+eps**2 is used in place of r**2.
-    Long description:                        
-        This option sets the softening length used to calculate the force
-        between two particles.  The calculation scheme conforms to standard
+  Short name: -s
+  Long name:		--softening_length
+  Value type:		float
+  Default value: 	0.0
+  Variable name: 	eps             
+  Description:		Softening length
+      Plummer softening, where rs2=r**2+eps**2 is used in place of r**2.
+  Long description:                        
+      This option sets the softening length used to calculate the force
+      between two particles.  The calculation scheme conforms to standard
 
 The text should contain Description and Long description tags as the
 first two entries in usual YAML format. After that,  blocks
@@ -112,6 +111,8 @@ Variable name: the name of instance variable within class CLOP.
   supported.
 * No way to use same option multiple times (such as -s 1 -s 2 ...).
   You can use string  as -s 1,2 and then decode it.
+* Indentation of the description text should be two. Also, each entry
+  such as "Short name:" should contain two leading white spaces.
 
 ## To do
 

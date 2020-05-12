@@ -21,11 +21,21 @@ class CLOPPARSER
     sprintf("Option%03d", i)
   end
   def self.add_option_tag(s)
+    sh = s + <<-EOF
+  Short name:		-h
+  Long name:  		--help
+  Value type:  		bool
+  Variable name:	help
+  Description:		Print help
+  Long description:
+    Print long help
+EOF
+
     ss=""
     i=0
     inoptions=false
     previous_line_was_newoption = false
-    s.each_line{|x|
+    sh.each_line{|x|
       if /^(\s)*(Short name|Long name):/ =~ x
         inoptions=true
         unless  previous_line_was_newoption
@@ -106,6 +116,7 @@ class CLOPPARSER
       STDERR.print data["Description"], "\n" if data["Description"]
     end
     i=0
+    STDERR.print "Short   and   Long options             Type  Default Description\n"
     while data[CLOPPARSER.optiontag(i)]?
       opt=data[CLOPPARSER.optiontag(i)]
       STDERR.print sprintf("%4s ", opt["Short name"]?  ),
