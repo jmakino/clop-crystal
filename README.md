@@ -69,6 +69,7 @@ and a has the type Float64 (determined at the compile time).
 
 A minimal example would be:
 
+```
   Description: Command line option parser sample code
   Long description:
     Test program for the class Clop (Command line option parser),
@@ -88,6 +89,7 @@ A minimal example would be:
   Long description:                        
       This option sets the softening length used to calculate the force
       between two particles.  The calculation scheme conforms to standard
+```
 
 The text should contain Description and Long description tags as the
 first two entries in usual YAML format. After that,  blocks
