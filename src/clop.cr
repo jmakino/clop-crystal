@@ -8,11 +8,21 @@
 
 require "yaml"
 
-macro clop_init(l, f, d, strname)
-{{system("head  -#{l-1} #{f}>  #{d}/.tmp.cr")}}
-{{system("echo CLOPPARSER.parse\\(#{strname}\\) >>  #{d}/.tmp.cr")}}
-{{system("crystal   #{d}/.tmp.cr")}}
+macro clop_init_old(l, f, d, strname)
+     {{system("head  -#{l-1} #{f}>  #{d}/.tmp.cr")}}
+     {{system("echo CLOPPARSER.parse\\(#{strname}\\) >>  #{d}/.tmp.cr")}}
+     {{system("crystal   #{d}/.tmp.cr")}}
+end
 
+macro clop_init_localtest0(l, f, d, strname)
+     {{run("./clop_process", l, f, d, strname)}}
+end
+macro clop_init_localtest(l, f, d, strname)
+     {{system("sh ./clop_process.sh #{l} #{f} #{d} #{strname}")}}
+end
+
+macro clop_init(l, f, d, strname)
+     {{system("sh ./lib/src/clop_process.sh #{l} #{f} #{d} #{strname}")}}
 end
 
 class CLOPPARSER
