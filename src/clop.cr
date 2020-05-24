@@ -22,7 +22,7 @@ macro clop_init_localtest(l, f, d, strname)
 end
 
 macro clop_init(l, f, d, strname)
-     {{system("sh ./lib/src/clop_process.sh #{l} #{f} #{d} #{strname}")}}
+     {{system("sh ./lib/clop/src/clop_process.sh #{l} #{f} #{d} #{strname}")}}
 end
 
 class CLOPPARSER
