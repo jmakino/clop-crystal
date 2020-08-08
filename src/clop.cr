@@ -134,9 +134,9 @@ EOF
                    sprintf("%12s ", opt["Value type"]?),
                    sprintf("%8s ", opt["Default value"]?)
       if type == "Long"
-        print "\n", opt["Long description"]
+        print "\n", opt["Long description"].to_s.chomp
       else
-        print opt["Description"]
+        print opt["Description"].to_s.chomp
       end
       print "\n"
       i+=1
