@@ -1,9 +1,7 @@
 name: clop
-version: 0.1.6
+version: 0.1.4
 
 authors:
    - Jun Makino <jmakno@people.kobe-u.ac.jp>
-
-crystal: ">=0.35.0"
 
 license: MIT
